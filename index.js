@@ -32,14 +32,21 @@ function Phrase(content) {
   this.letters = function letters() {
     // return this.content;   stubbing not yet completed functions
 	// is also a good way to get more explicit test messages.
-	
+	/*
 	let theLetters = [];
-    for (let i = 0; i < this.content.length; i++) {
-      if (this.content.charAt(i).match(/[a-zA-Z]/)) {
-        theLetters.push(this.content.charAt(i));
-      }
-    }
-    return theLetters.join("");
+	const letterRegex = /[a-zA-Z]/i;
+    // for (let i = 0; i < this.content.length; i++) {
+	// Replacing the for loop:
+	Array.from(this.content).forEach(function(character) {
+	  // Not needed anymore:
+	  // let character = this.content.charAt(i);
+      if (character.match(letterRegex)) {
+        theLetters.push(character);
+      };
+    });
+    return theLetters.join(""); */
+	// even better:
+	return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
   }
 
 
